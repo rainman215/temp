@@ -11,9 +11,9 @@ import smtplib
 
 mailto_list = ['long.cheng@keliangtek.com']           # 收件人(列表)
 mail_host = "smtp.exmail.qq.com:465"            # 使用的邮箱的smtp服务器地址，这里是qq的smtp地址
-mail_user = "long.cheng@keliangtek.com"                           # 用户名
+mail_user = "1.cheng@qq.com"                           # 用户名
 mail_pass = ""                             # 密码
-mail_postfix = "keliangtek.com"  # 邮箱的后缀
+mail_postfix = "qq.com"  # 邮箱的后缀
 
 
 def send_mail(to_list, sub, content):
