@@ -62,9 +62,9 @@ class MyEmail:
 
 if __name__ == "__main__":
     my = MyEmail()
-    my.user = "long.cheng@keliangtek.com"
+    my.user = "q.cheng@qq.com"
     my.passwd = ""
-    my.to_list = ["long.cheng@keliangtek.com", 'fan.zhou@keliangtek.com']
+    my.to_list = ["1.cheng@qq.com", '3.zhou@qq.com']
 #     my.cc_list = ["", ]
     my.tag = "script"
     my.doc = r"G:\workspace\www\qq2.py"
