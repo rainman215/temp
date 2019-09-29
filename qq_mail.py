@@ -9,11 +9,11 @@ import smtplib
 
 
 
-mailto_list = ['long.cheng@keliangtek.com']           # ÊÕ¼şÈË(ÁĞ±í)
-mail_host = "smtp.exmail.qq.com:465"            # Ê¹ÓÃµÄÓÊÏäµÄsmtp·şÎñÆ÷µØÖ·£¬ÕâÀïÊÇqqµÄsmtpµØÖ·
-mail_user = "long.cheng@keliangtek.com"                           # ÓÃ»§Ãû
-mail_pass = "GDhSYRc5f84NTYsC"                             # ÃÜÂë
-mail_postfix = "keliangtek.com"  # ÓÊÏäµÄºó×º
+mailto_list = ['long.cheng@keliangtek.com']           # æ”¶ä»¶äºº(åˆ—è¡¨)
+mail_host = "smtp.exmail.qq.com:465"            # ä½¿ç”¨çš„é‚®ç®±çš„smtpæœåŠ¡å™¨åœ°å€ï¼Œè¿™é‡Œæ˜¯qqçš„smtpåœ°å€
+mail_user = "long.cheng@keliangtek.com"                           # ç”¨æˆ·å
+mail_pass = ""                             # å¯†ç 
+mail_postfix = "keliangtek.com"  # é‚®ç®±çš„åç¼€
 
 
 def send_mail(to_list, sub, content):
@@ -21,13 +21,13 @@ def send_mail(to_list, sub, content):
     new_report = [r"E:\name.txt", "name.txt"]
     print(new_report[0])
     msg = MIMEMultipart()
-    msg['Subject'] = sub                    # Ö÷Ìâ
+    msg['Subject'] = sub                    # ä¸»é¢˜
     msg['From'] = me
-    msg['To'] = ";".join(to_list)                # ½«ÊÕ¼şÈËÁĞ±íÒÔ¡®£»¡¯·Ö¸ô
-    # ÎÄ±¾ÄÚÈİ
+    msg['To'] = ";".join(to_list)                # å°†æ”¶ä»¶äººåˆ—è¡¨ä»¥â€˜ï¼›â€™åˆ†éš”
+    # æ–‡æœ¬å†…å®¹
     text_content = MIMEText(content)
     msg.attach(text_content)
-    # ¸½¼ş
+    # é™„ä»¶
     attachment = MIMEApplication(open(new_report[0], 'rb').read())
     attachment.add_header("Content-Disposition", "attachment", filename=new_report[1])
     msg.attach(attachment)
@@ -40,8 +40,8 @@ def send_mail(to_list, sub, content):
     except Exception as e:
         print(str(e))
         return False
-for i in range(1):                             # ·¢ËÍ1·â£¬ÉÏÃæµÄÁĞ±íÊÇ¼¸¸öÈË£¬Õâ¸ö¾ÍÌî¼¸
-    if send_mail(mailto_list, u"²âÊÔ±¨¸æ", 'test'):  # ÓÊ¼şÖ÷ÌâºÍÓÊ¼şÄÚÈİ
+for i in range(1):                             # å‘é€1å°ï¼Œä¸Šé¢çš„åˆ—è¡¨æ˜¯å‡ ä¸ªäººï¼Œè¿™ä¸ªå°±å¡«å‡ 
+    if send_mail(mailto_list, u"æµ‹è¯•æŠ¥å‘Š", 'test'):  # é‚®ä»¶ä¸»é¢˜å’Œé‚®ä»¶å†…å®¹
         print("done!")
     else:
         print("failed!")
