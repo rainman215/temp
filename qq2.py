@@ -63,7 +63,7 @@ class MyEmail:
 if __name__ == "__main__":
     my = MyEmail()
     my.user = "long.cheng@keliangtek.com"
-    my.passwd = "GDhSYRc5f84NTYsC"
+    my.passwd = ""
     my.to_list = ["long.cheng@keliangtek.com", 'fan.zhou@keliangtek.com']
 #     my.cc_list = ["", ]
     my.tag = "script"
